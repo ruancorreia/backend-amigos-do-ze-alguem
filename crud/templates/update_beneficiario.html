@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Beneficiário</title>
+</head>
+<body>
+    <h1>Editar Beneficiário</h1>
+    <form method="POST" action="{% url 'update_beneficiario' beneficiario.id %}">
+        {% csrf_token %}
+        <input type="text" name="nome" value="{{ beneficiario.nome }}" required>
+        <input type="text" name="apelido" value="{{ beneficiario.apelido }}">
+        <input type="text" name="documento" value="{{ beneficiario.documento }}" required>
+        <input type="text" name="endereco" value="{{ beneficiario.endereco }}">
+        <input type="text" name="telefone" value="{{ beneficiario.telefone }}">
+        <textarea name="observacoes">{{ beneficiario.observacoes }}</textarea>
+        <button type="submit">Atualizar</button>
+    </form>
+    <a href="{% url 'lista_beneficiarios' %}">Cancelar</a>
+</body>
+</html>

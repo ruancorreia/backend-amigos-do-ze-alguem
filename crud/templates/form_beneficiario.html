@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Beneficiário</title>
+</head>
+<body>
+    <h1>Adicionar Beneficiário</h1>
+    <form method="POST" action="{% url 'salvar_beneficiario' %}">
+        {% csrf_token %}
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="text" name="apelido" placeholder="Apelido">
+        <input type="text" name="documento" placeholder="Documento" required>
+        <input type="text" name="endereco" placeholder="Endereço">
+        <input type="text" name="telefone" placeholder="Telefone">
+        <textarea name="observacoes" placeholder="Observações"></textarea>
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'lista_beneficiarios' %}">Cancelar</a>
+</body>
+</html>

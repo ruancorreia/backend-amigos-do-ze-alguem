@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Beneficiários</title>
+</head>
+<body>
+    <h1>Lista de Beneficiários</h1>
+    <a href="{% url 'salvar_beneficiario' %}">Adicionar Beneficiário</a>
+    <ul>
+        {% for beneficiario in beneficiarios %}
+            <li>
+                {{ beneficiario.nome }} 
+                <a href="{% url 'editar_beneficiario' beneficiario.id %}">Editar</a>
+                <a href="{% url 'delete_beneficiario' beneficiario.id %}">Deletar</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
