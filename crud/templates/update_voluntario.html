@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Editar Voluntário</title>
+  </head>
+  <body>
+    <h1>Editar Voluntário</h1>
+    <form method="POST" action="{% url 'update_voluntario' voluntario.id %}">
+      {% csrf_token %}
+      <input type="text" name="nome" value="{{ voluntario.nome }}" required />
+      <input type="text" name="cpf" value="{{ voluntario.cpf }}" required />
+      <input type="text" name="telefone" value="{{ voluntario.telefone }}" />
+      <button type="submit">Atualizar</button>
+    </form>
+    <a href="{% url 'lista_voluntarios' %}">Cancelar</a>
+  </body>
+</html>
