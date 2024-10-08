@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Adicionar Voluntário</title>
+  </head>
+  <body>
+    <h1>Adicionar Voluntário</h1>
+    <form method="POST" action="{% url 'salvar_voluntario' %}">
+      {% csrf_token %}
+      <input type="text" name="nome" placeholder="Nome" required />
+      <input type="text" name="cpf" placeholder="cpf" required />
+      <input type="text" name="telefone" placeholder="Telefone" />
+      <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'lista_voluntarios' %}">Cancelar</a>
+  </body>
+</html>
